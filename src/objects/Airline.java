@@ -1,12 +1,13 @@
 package src.objects;
 
 public class Airline {
-    private static int id;
+    private static int count;
+
+    private int id;
     private String name, code, country;
 
-    public Airline(int id, String name, String code, String country) {
-        this.id = id;
-        id++;
+    public Airline(String name, String code, String country) {
+        this.id = count++;
         this.name = name;
         this.code = code;
         this.country = country;
