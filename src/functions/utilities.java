@@ -1,6 +1,7 @@
 package src.functions;
 
 import src.objects.Seat;
+import src.objects.User;
 
 public class utilities {
     public static Seat[] arrangeSeats(int numSeats, int type) {
@@ -29,6 +30,24 @@ public class utilities {
                 total++;
             }
             row++;
+        }
+        return seats;
+    }
+
+    public static Seat[] reserveSeat(Seat[] seats, int number, char letter, User u){
+        boolean reserved = false;
+        for (int i = 0; i< seats.length; i++) {
+            if (seats[i].getNumber() == number) {
+                while (seats[i].getNumber() == number){
+                    if (seats[i].getLetter() == letter){
+                        seats[i].reserve(u.getId(), u.getName());
+                        reserved = true;
+                        break;
+                    }
+                    i++;
+                }
+            }
+            if (reserved){ break; }
         }
         return seats;
     }

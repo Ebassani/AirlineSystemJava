@@ -15,8 +15,16 @@ public class Seat {
         this.type = type;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public char getLetter() {
+        return letter;
+    }
+
     public String getSeat() {
-        return String.valueOf(number+letter);
+        return String.valueOf(number) + letter;
     }
 
     public String getType() {
