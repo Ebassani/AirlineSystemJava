@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(hel_fra);
 
-        boolean print = false;
+        boolean print = true;
         if (print) {
             for (int i = 0; i < 216; i++) {
                 String seatA = seats[i].getSeat();
