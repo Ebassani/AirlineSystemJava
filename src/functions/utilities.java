@@ -1,5 +1,6 @@
 package src.functions;
 
+import src.objects.Airport;
 import src.objects.Seat;
 import src.objects.User;
 
@@ -45,5 +46,25 @@ public class utilities {
             break;
         }
         return seats;
+    }
+
+    public static double airportDistance(Airport from, Airport to) {
+        double lonFrom = Math.toRadians(from.getLongitude());
+        double latFrom = Math.toRadians(from.getLatitude());
+        double lonTo = Math.toRadians(to.getLongitude());
+        double latTo = Math.toRadians(to.getLatitude());
+
+        double distLon = lonTo - lonFrom;
+        double distLat = latTo - latFrom;
+
+        double a = Math.pow(Math.sin(distLat / 2), 2)
+                + Math.cos(latFrom) * Math.cos(latTo)
+                * Math.pow(Math.sin(distLon / 2),2);
+
+        double c = 2 * Math.asin(Math.sqrt(a));
+
+        double r = 6371;
+
+        return(c * r);
     }
 }

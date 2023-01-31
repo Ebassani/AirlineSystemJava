@@ -6,12 +6,16 @@ public class Airport {
 
     private double latitude, longitude;
 
-    public Airport(String city, String country, String iataCode, int gmt) {
+    public Airport(String city, String country, String iataCode, int gmt, double latitude, double longitude) {
         this.city = city;
         this.country = country;
         this.iataCode = iataCode;
         this.gmt = gmt;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
+
+    public Airport(){}
 
     public String getCity() {
         return city;
@@ -27,6 +31,38 @@ public class Airport {
 
     public int getGmt() {
         return gmt;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setIataCode(String iataCode) {
+        this.iataCode = iataCode;
+    }
+
+    public void setGmt(int gmt) {
+        this.gmt = gmt;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     @Override
