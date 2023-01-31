@@ -1,13 +1,16 @@
 package src.objects;
 
 public class Airport {
-    private String city, country, code, countryCode;
+    private String city, country, iataCode;
+    private int gmt;
 
-    public Airport(String city, String country, String code, String countryCode) {
+    private double latitude, longitude;
+
+    public Airport(String city, String country, String iataCode, int gmt) {
         this.city = city;
         this.country = country;
-        this.code = code;
-        this.countryCode = countryCode;
+        this.iataCode = iataCode;
+        this.gmt = gmt;
     }
 
     public String getCity() {
@@ -18,11 +21,21 @@ public class Airport {
         return country;
     }
 
-    public String getCode() {
-        return code;
+    public String getIataCode() {
+        return iataCode;
     }
 
-    public String getCountryCode() {
-        return countryCode;
+    public int getGmt() {
+        return gmt;
+    }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", iataCode='" + iataCode + '\'' +
+                ", gmt=" + gmt +
+                '}';
     }
 }

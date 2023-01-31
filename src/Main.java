@@ -1,9 +1,13 @@
 package src;
 
+import src.dao.AirportDAO;
 import src.objects.*;
 
+
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String arrgs[]) {
+    public static void main(String arrgs[]) throws SQLException {
         Plane boing = new Plane("BO321", 216, 1);
 
         Airline finnAir = new Airline("Finnair", "FN", "Finland");
@@ -13,8 +17,8 @@ public class Main {
 
         System.out.println(hel_fra);
 
-        boolean print = true;
-        if (print) {
+
+        if (false) {
             for (int i = 0; i < 216; i++) {
                 String seatA = seats[i].getSeat();
                 String seatB = seats[++i].getSeat();
@@ -27,6 +31,10 @@ public class Main {
 
         User user = new User("Malandro");
 
+        Airport[] airports = AirportDAO.getAirports().toArray(new Airport[0]);
+        for (Airport airport : airports){
+            System.out.println(airport);
+        }
 
     }
 
