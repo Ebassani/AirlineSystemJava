@@ -1,12 +1,13 @@
 package src;
 
 import src.dao.AirportDAO;
+import src.dao.PlaneSeatDAO;
 import src.functions.utilities;
 import src.objects.*;
 
 public class Main {
     public static void main(String[] args) {
-        Plane boeing = new Plane("BO321", 216, 1);
+        Plane boeing = new Plane("BO321", utilities.arrangeSeats(216,1, "BO321"));
 
         Airline finnAir = new Airline("Finnair", "FN", "Finland");
 
@@ -28,6 +29,8 @@ public class Main {
         for (Airport airport : airports){
             System.out.println(airport);
         }
+
+        PlaneSeatDAO.createSeats(utilities.arrangeSeats(216,1,"BO321"));
 
     }
 

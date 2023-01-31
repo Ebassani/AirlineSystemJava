@@ -2,53 +2,62 @@ package src.objects;
 
 public class Seat {
 
-    private int number, reservationId;
-    private char letter;
-    private String type, reservationName, flightCode;
+    private int type, reservationId;
 
-    boolean reserved;
+    private String seat_code, reservationName, flightCode, planeCode;
 
 
-    public Seat(int number, char letter, String type) {
-        this.number = number;
-        this.letter = letter;
+    public Seat(String seat_code, String planeCode, int type) {
+        this.seat_code = seat_code;
+        this.planeCode = planeCode;
         this.type = type;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public char getLetter() {
-        return letter;
-    }
-
-    public String getSeat() {
-        return String.valueOf(number) + letter;
-    }
-
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public boolean isReserved() {
-        return reserved;
+    public int getReservationId() {
+        return reservationId;
     }
 
-    public void reserve(int id, String name) {
-        this.reserved = true;
-        this.reservationId = id;
-        this.reservationName = name;
+    public void setReservationId(int reservationId) {
+        this.reservationId = reservationId;
     }
 
-    public String[] getReservation() {
-        if (this.reserved) {
-            return new String[]{this.reservationName, String.valueOf(this.reservationId)};
-        }
-        return new String[0];
+    public String getSeat_code() {
+        return seat_code;
+    }
+
+    public void setSeat_code(String seat_code) {
+        this.seat_code = seat_code;
+    }
+
+    public String getReservationName() {
+        return reservationName;
+    }
+
+    public void setReservationName(String reservationName) {
+        this.reservationName = reservationName;
+    }
+
+    public String getFlightCode() {
+        return flightCode;
+    }
+
+    public void setFlightCode(String flightCode) {
+        this.flightCode = flightCode;
+    }
+
+    public String getPlaneCode() {
+        return planeCode;
+    }
+
+    public void setPlaneCode(String planeCode) {
+        this.planeCode = planeCode;
     }
 }

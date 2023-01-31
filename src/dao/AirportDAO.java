@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AirportDAO {
-    private static Connection conn;
+    private static final Connection conn;
 
     static {
         try {

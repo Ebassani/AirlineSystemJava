@@ -5,18 +5,18 @@ import src.objects.Seat;
 import src.objects.User;
 
 public class utilities {
-    public static Seat[] arrangeSeats(int numSeats, int type) {
+    public static Seat[] arrangeSeats(int numSeats, int type, String planeCode) {
         Seat[] seats = new Seat[numSeats];
         switch (type) {
             case 1:
-                seats = seatType1(seats, numSeats);
+                seats = seatType1(seats, numSeats, planeCode);
                 break;
         }
 
         return seats;
     }
 
-    private static Seat[] seatType1(Seat[] seats, int numSeats) {
+    private static Seat[] seatType1(Seat[] seats, int numSeats, String planeCode) {
         int total = 0;
         int row = 1;
         char[] letters = {'A', 'B', 'D', 'E'};
@@ -26,24 +26,11 @@ public class utilities {
                 if (total == numSeats) {
                     break;
                 }
-                seats[total] = new Seat(row, letter, "ECONOMY");
+                seats[total] = new Seat(String.valueOf(row + letter), planeCode, 1);
 
                 total++;
             }
             row++;
-        }
-        return seats;
-    }
-
-    public static Seat[] reserveSeat(Seat[] seats, int number, char letter, User u) {
-
-        for (Seat seat : seats) {
-            if (seat.getNumber() != number || seat.getLetter() != letter) {
-                continue;
-            }
-
-            seat.reserve(u.getId(), u.getName());
-            break;
         }
         return seats;
     }
