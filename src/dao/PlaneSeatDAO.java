@@ -1,7 +1,6 @@
 package src.dao;
 
 import src.ConnectionManager;
-import src.objects.Airport;
 import src.objects.Seat;
 
 import java.sql.*;

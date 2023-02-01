@@ -7,14 +7,14 @@ import src.objects.*;
 
 public class Main {
     public static void main(String[] args) {
-        Plane boeing = new Plane("BO321", utilities.arrangeSeats(216,1, "BO321"));
+        //Plane boeing = new Plane("BO321", utilities.arrangeSeats(216,1, "BO321"));
 
-        Airline finnAir = new Airline("Finnair", "FN", "Finland");
-
-        Flight hel_fra = new Flight(112, finnAir.getCode(), "HEL", "FRA", boeing);
-        Seat[] seats = hel_fra.getSeats();
-
-        System.out.println(hel_fra);
+//        Airline finnAir = new Airline("Finnair", "FN", "Finland");
+//
+//        Flight hel_fra = new Flight(112, finnAir.getCode(), "HEL", "FRA", boeing);
+//        Seat[] seats = hel_fra.getSeats();
+//
+//        System.out.println(hel_fra);
 
         Airport porto = new Airport("Porto Alegre","Brazil","POA", -3, -30.066666666667, -51.183333333333);
         //AirportDAO.createAirport(porto);

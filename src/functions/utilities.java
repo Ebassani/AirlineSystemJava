@@ -2,7 +2,6 @@ package src.functions;
 
 import src.objects.Airport;
 import src.objects.Seat;
-import src.objects.User;
 
 public class utilities {
     public static Seat[] arrangeSeats(int numSeats, int type, String planeCode) {
